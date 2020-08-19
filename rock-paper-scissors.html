@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+body {
+    background-color: #003000;
+    color: #ffffff;
+
+}
+        </style>
+    </head>
+<header>
+
+
+</header>
+
+<body>
+
+</body>
+
+<footer>
+
+</footer>
+<script>
+    let gameTime = prompt("Would you like to play a game with me?");
+    if (gameTime.toLowerCase() == "yes") {
+        alert("Yay! Lets's play!");}
+    else alert("Tough! My screen. My rules! Let's play");
+
+    alert("I like rock paper scissors, let's play that");
+    
+const gameOptions = ['rock', 'paper', 'scissors']; 
+function computerPlay() {
+      return gameOptions [(Math.random() * gameOptions.length) | 0]
+}
+function game() {
+    let playerSelection = prompt("Make your selection. rock, paper or scissors");
+    computerPlay();
+    alert ("Rock Paper Scissors Shoot!");
+    let y = playerSelection.toLocaleLowerCase();
+    let x = computerPlay();
+    
+    if (y == "rock" && x == "scissors"){ 
+        return ("Rock SMASHES scissors! You WIN!");
+    } else if (y == "rock" && x == "paper"){
+            return (" Aww Paper covers Rock. Too bad. You lose");
+    } else if (y == "paper" && x == "rock"){
+        return ("Paper COVERS Rock! You WIN!");
+    } else if (y == "paper" && x == "scissors"){
+        return ("Scissors CUT paper! You lose. Unlucky");
+    } else if (y == "scissors" && x == "paper"){
+        return ("Scissors CUT paper! You WIN!");
+    } else if (y == "scissors" && x == "rock"){
+        return ("Rock SMASHES Scissors! You Lose....again");
+    } else if (y === x){
+        return ("Draw!")
+    } else {
+        return ("Hmmmm something has gone terribly wrong....what did you do?")
+    }   
+     
+}
+
+
+console.log(game());
+function loop() {
+let playAgain = prompt ("Would you like to play again?");
+if (playAgain == "yes" || "yep" || "yeah") {
+    game();
+} else { return ("Fine! Runaway.....Chicken!");
+}
+} 
+
+console.log(loop());
+    
+</script>
+</html>
