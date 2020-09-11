@@ -1,75 +1,61 @@
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
         <style>
-body {
-    background-color: #003000;
-    color: #ffffff;
-
-}
         </style>
     </head>
-<header>
-
-
-</header>
-
 <body>
+    <header>
+    </header>
+<h1>
+    Rock Paper Scissors Lizard Spock!
+</h1>
+<h2>
+    The Rules
+</h2>
+<div id="theRules">
+    <div id="ScCuPa">Scissors cut Paper</div>
+    <div id="PaCoRo">Paper covers Rock</div>
+    <div id="RoCrLi">Rock crushes Lizard</div>    
+    <div id="LiPoSp">Lizard poisons Spock</div>    
+    <div id="SpSmSc">Spock smashes Scissors</div>   
+    <div id="ScDeLi">Scissors decapitates Lizard</div>
+    <div id="LiEaPa">Lizard eats Paper</div>
+    <div id="PaDiSp">Paper disproves Spock</div>    
+    <div id="SpVaRo">Spock vapourizes Rock</div>
+    <div id="RoCrSc">Rock crushes Scissors</div>
+</div>
+<table id="score">
+    <tr>
+    <th>Player:</th>
+    <th>Score:</th>
+    </tr>
+    <tr>
+    <td>You</td>
+    <td id="playerScore"></td>
+    </tr>
+    <tr>
+        <td>Computer</td>
+        <td id="computerScore"></td>
+    </tr>
 
+
+</table>
+<div id="buttons">
+    <button id="spock">Spock</button>
+    <button id="lizard">Lizard</button>
+    <button id="scissors">Scissors</button>
+    <button id="paper">Paper</button>
+    <button id="rock">Rock</button>
+</div>
 </body>
 
 <footer>
 
 </footer>
-<script>
-    let gameTime = prompt("Would you like to play a game with me?");
-    if (gameTime.toLowerCase() == "yes") {
-        alert("Yay! Lets's play!");}
-    else alert("Tough! My screen. My rules! Let's play");
+<script src="rock-paper-scissors.js">
 
-    alert("I like rock paper scissors, let's play that");
-    
-const gameOptions = ['rock', 'paper', 'scissors']; 
-function computerPlay() {
-      return gameOptions [(Math.random() * gameOptions.length) | 0]
-}
-function game() {
-    let playerSelection = prompt("Make your selection. rock, paper or scissors");
-    computerPlay();
-    alert ("Rock Paper Scissors Shoot!");
-    let y = playerSelection.toLocaleLowerCase();
-    let x = computerPlay();
-    
-    if (y == "rock" && x == "scissors"){ 
-        return ("Rock SMASHES scissors! You WIN!");
-    } else if (y == "rock" && x == "paper"){
-            return (" Aww Paper covers Rock. Too bad. You lose");
-    } else if (y == "paper" && x == "rock"){
-        return ("Paper COVERS Rock! You WIN!");
-    } else if (y == "paper" && x == "scissors"){
-        return ("Scissors CUT paper! You lose. Unlucky");
-    } else if (y == "scissors" && x == "paper"){
-        return ("Scissors CUT paper! You WIN!");
-    } else if (y == "scissors" && x == "rock"){
-        return ("Rock SMASHES Scissors! You Lose....again");
-    } else if (y === x){
-        return ("Draw!")
-    } else {
-        return ("Hmmmm something has gone terribly wrong....what did you do?")
-    }   
-     
-}
-
-
-console.log(game());
-function loop() {
-let playAgain = prompt ("Would you like to play again?");
-if (playAgain == "yes" || "yep" || "yeah") {
-    game();
-} else { return ("Fine! Runaway.....Chicken!");
-}
-} 
-
-console.log(loop());
     
 </script>
 </html>
