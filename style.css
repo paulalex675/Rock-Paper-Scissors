@@ -1,3 +1,4 @@
+
 body {
     color: #009900;
     background-image: linear-gradient(to bottom, #000000, #000011, #000022, #000044, #000055); 
@@ -7,6 +8,8 @@ body {
     max-height: auto;
     }
 h1 {
+   display: flex;
+   justify-content: center;
     color: #ffff00;
     font-size: 100px;
     font-family: 'Orbitron', sans-serif;
@@ -23,23 +26,42 @@ h2 {
 #theRules {
     color: #777733;
     font-size: 35px;
-    text-align: justify;
-    text-align-last: left;
     margin-left: 5%;
     padding-bottom: 20px;
     
 }
+#centerPage {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+}
+#messageBox{
+    font-family: 'VT323', monospace;
+    font-size: 40px;
+    display: flex;
+    flex: row;
+    text-shadow: #ffffff;
+    background-color: #000000;
+    box-shadow: 0 0 10 #990099;
+    border-radius: 5px;
+    align-content: space-around;
+    padding: 20px;
+    margin-right: 10%;
+    border-style: ridge;
+    border-color: #666666;
+    border-width: 25px;
+    
+
+
+}
 
 #score {
-    font-size: 50px;
-    background-color: #333333;
-    padding: 20px;
-    border: 5px #555555;
-    border-radius: 10px;
-    box-shadow:0 0 10px #888888;
-    margin-left: 5%;
+    font-size: 50px; 
+    margin-right: 200px;
 }
-tr, td {
+tr, th,  td {
     padding: 10px, 50px, 10px, 10px;
     background-color: #333333;
     padding: 20px;
@@ -48,8 +70,16 @@ tr, td {
     box-shadow:0 0 10px #888888;
     margin-left: 5%;
 }
-
+#bottomRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 button {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
     color: #d82c2c;
     text-shadow: 1px 1px 3px #000000;
     background-color: green;
@@ -67,7 +97,4 @@ button {
 button:hover {
     transform: scale(1.3);
     box-shadow: 0 0 10px #ff0000;
-}
-#spock {
-    margin-right: 200px;
 }

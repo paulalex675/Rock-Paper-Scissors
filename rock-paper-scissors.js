@@ -1,11 +1,48 @@
-let gameTime = prompt("Would you like to play a game with me?");
-    if (gameTime.toLowerCase() == "yes") {
-        alert("Yay! Lets's play!");}
-    else alert("Tough! My screen. My rules! Let's play");
+var player = prompt("Hi, what's your name?");
+var playerName = document.querySelector('#player');
+playerName.textContent = player;
+const messageBox = document.querySelector('#messageBox');
+const centerPage = document.querySelector('#centerPage');
+var i = 0;
+var speed = 50; 
+function updateMessageBox() {
+    if (i < z.length) {
+    messageBox.textContent += z.charAt(i);
+    i++;
+    setTimeout(updateMessageBox, speed);
+  }
+}
+let z = 'Hi ' + player + ' would you like to play a game with me?';
+updateMessageBox();
+const reply = document.createElement('input');
+const btn = document.createElement('button');
+reply.setAttribute('id', 'input1');
+reply.setAttribute('type', 'text');
+btn.textContent = 'Click Me';
+btn.style.padding = '5px';
+btn.style.fontSize = '35px';
+btn.style.backgroundColor = 'grey';
+reply.style.fontSize = '35px';
+reply.style.maxWidth = '200px';
+btn.onclick = () => {   
+    let z = undefined;
+    if (reply.value.toLowerCase() == "yes" || reply.value.toLowerCase() == "yep" || 
+    reply.value.toLowerCase() == "yeah" || reply.value.toLowerCase() == "ok" || 
+    reply.value.toLowerCase() == "sure" || reply.value.toLowerCase() == "absolutely" || 
+    reply.value.toLowerCase() == "okey dokie") {
+        alert("Yay! Lets's play!");
+    }else alert("Tough! My screen. My rules! Let's play");
+};
+centerPage.appendChild(reply);
+centerPage.appendChild(btn);
+const like = document.createElement('p');
+//like.textContent = 'I like Rock, Paper, Scissors, Lizard, Spock!';
+messageBox.appendChild(like);
+//z = "I like rock paper scissors lizard Spock, let's play that";
+//updateMessageBox();
 
-alert("I like rock paper scissors lizard Spock, let's play that");
-alert("First one to 5 wins!");
-
+//z = "First one to 5 wins!";
+//updateMessageBox();
 const gameOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock']; 
 function computerPlay() {
       return gameOptions [(Math.random() * gameOptions.length) | 0]
@@ -37,8 +74,12 @@ rock.addEventListener('click', () => {
 });
 
 function reset() {
-    var playerScore = 0;
-    var computerScore = 0; 
+    var myScore = document.querySelector('#computerScore');
+    myScore.textContent = 0;
+    var yourScore = document.querySelector('#playerScore');
+    yourScore.textContent = 0;
+    playerScore = 0;
+    computerScore = 0;
 }
 var playerScore = 0;
 var computerScore = 0;
@@ -46,6 +87,7 @@ function win() {
         playerScore += 1;
         var yourScore = document.querySelector('#playerScore');
         yourScore.textContent = playerScore;
+        
 }
 function lose() {
         computerScore += 1;
@@ -54,9 +96,11 @@ function lose() {
 }
 function checkScore() {
     if (playerScore === 5) {
-        alert ("Congratulations You win!! Would you like to play again?");
+        alert ("Congratulations You're a winner " + player + "!! Let's play again!");
+        reset(playerScore && computerScore);
     } else if (computerScore === 5) {
-        alert ("You LOSE sucker! Want to try again?");
+        alert ("You LOSE " +player+ "! Let's play again");
+        reset(playerScore && computerScore);
     } else alert ("Pick again");
 }
 function game(y) {
@@ -65,7 +109,7 @@ function game(y) {
     let x = computerPlay();
     
     if (y == "rock" && x == "scissors"){ 
-        alert ("Rock SMASHES scissors! You WIN!");
+        alert("Rock SMASHES scissors! You WIN!");
         win();
     } else if (y == "rock" && x == "paper"){
         alert (" Aww Paper covers Rock. Too bad. You lose");
@@ -80,7 +124,7 @@ function game(y) {
         alert ("Lizard eats Paper. You Lose!");
         lose();
     } else if (y == "paper" && x == "spock"){
-        alert ("Paper dispproves Spock. You Win!");
+        alert ("Paper disproves Spock. You Win!");
         win();
     } else if (y == "paper" && x == "rock"){
         alert ("Paper COVERS Rock! You WIN!");

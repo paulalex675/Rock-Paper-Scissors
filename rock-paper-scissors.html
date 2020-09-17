@@ -2,18 +2,20 @@
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
         <style>
         </style>
     </head>
 <body>
-    <header>
-    </header>
-<h1>
-    Rock Paper Scissors Lizard Spock!
-</h1>
+<header>
+        <h1>
+            Rock Paper Scissors Lizard Spock!
+        </h1>
+</header>
 <h2>
     The Rules
 </h2>
+<div id="centerPage">
 <div id="theRules">
     <div id="ScCuPa">Scissors cut Paper</div>
     <div id="PaCoRo">Paper covers Rock</div>
@@ -26,28 +28,31 @@
     <div id="SpVaRo">Spock vapourizes Rock</div>
     <div id="RoCrSc">Rock crushes Scissors</div>
 </div>
+<p id="messageBox">
+</p>
+</div>
+<div id="bottomRow">
 <table id="score">
     <tr>
     <th>Player:</th>
     <th>Score:</th>
     </tr>
     <tr>
-    <td>You</td>
+    <td id="player"></td>
     <td id="playerScore"></td>
     </tr>
     <tr>
         <td>Computer</td>
         <td id="computerScore"></td>
     </tr>
-
-
 </table>
 <div id="buttons">
-    <button id="spock">Spock</button>
-    <button id="lizard">Lizard</button>
-    <button id="scissors">Scissors</button>
-    <button id="paper">Paper</button>
     <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <button id="lizard">Lizard</button>
+    <button id="spock">Spock</button>
+</div>
 </div>
 </body>
 
